@@ -46,25 +46,7 @@ A structured system is required because it ensures accurate, consistent, and tra
 - Real-time banking integration
 - Fraud detection systems (future enhancement)
 
-# 6. Functional Requiremnts
-
-## The system must be able to:
-
-- Create and manage customer profiles
-- Open and manage bank accounts
-- Process deposits and withdrawals
-- Record all financial transactions
-- Display account balances
-- Retrieve transaction history per account
-
-# 7. Non-functional requirements
-
-- Data Integrity: All transactions must be accurate and consistent
-- Reliability: System must ensure no data loss during operations
-- Performance: Queries must execute efficiently
-- Maintainability: Code and database must be structured clearly
-
-# 8. Business Rules
+# 6. Business Rules
 
 - A customer may own multiple accounts
 - Each account is linked to one customer only
@@ -72,14 +54,14 @@ A structured system is required because it ensures accurate, consistent, and tra
 - Every transaction must be recorded in the system
 - Account balance must reflect all transactions accurately
 
-# 9. Assumptions
+# 7. Assumptions
 
 - The system is a simulation for educational purposes
 - No real banking systems or live financial data are used
 - Users are manually inserted
 - Database is hosted locally on MySQL environment
 
-# 10. Success Criteria
+# 8. Success Criteria
 
 ## The system will be considered successful if:
 
