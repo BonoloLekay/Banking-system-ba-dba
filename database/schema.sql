@@ -1,7 +1,6 @@
---Core tables
---Customers (customer_id(PK), name, surname, email)
---Accounts (accounts_id(PK), customer_id(FK), balance)
---Transactions (transaction_id(PK), accounts_id(FK), amount, transaction_type, transaction_date)
+-- Customers (customer_id(PK), name, surname, email)
+-- Accounts (accounts_id(PK), customer_id(FK), balance)
+-- Transactions (transaction_id(PK), accounts_id(FK), amount, transaction_type, transaction_date)
 
 CREATE TABLE Customers (
     customer_id INT PRIMARY KEY,
