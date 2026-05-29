@@ -1,11 +1,15 @@
 # Process Flows
+
 ## Smart banking system
 
 ## 1. Deposit process
+
 ### Description
+
 This process allows a customer to deposit money into a selected bank accont.
 
 ## Steps
+
 1. Customer selects an account.
 2. System validates that the account exists.
 3. Customer enters deposit amount.
@@ -15,10 +19,13 @@ This process allows a customer to deposit money into a selected bank accont.
 7. System confirms successful deposit.
 
 ## 2. Withdrawal process
+
 ### Description
+
 Withdrawal process allows the user to withdraw money from the account while ensuring that the balance is sufficient.
 
 ## Steps
+
 1. Customer selects the desired account.
 2. System validates that the account exists.
 3. Customer enters withdrawal amount.
@@ -30,10 +37,13 @@ Withdrawal process allows the user to withdraw money from the account while ensu
 9. System confirms that the withdrawal is successful.
 
 ## 3. Checking Balance
+
 ## Description
+
 This process allows the user to check the balance of the selected account.
 
 ## Steps
+
 1. Customer selects the desired account.
 2. System validates the account exists.
 3. Systems retrieves the account balance.
@@ -41,8 +51,8 @@ This process allows the user to check the balance of the selected account.
 
 ## 4. Process Flow Summary
 
-| Process    | Column 2                        |
-|------------|---------------------------------|
-| Deposit    | Amount entered must be positive.|
-| Withdrawal | Balance must be sufficient.     |
-| Balance    | Account must exist.             |
+| Process    | Description                      |
+| ---------- | -------------------------------- |
+| Deposit    | Amount entered must be positive. |
+| Withdrawal | Balance must be sufficient.      |
+| Balance    | Account must exist.              |
