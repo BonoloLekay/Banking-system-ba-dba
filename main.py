@@ -14,7 +14,7 @@ def menu():
 def main():
     while True:
         menu()
-        choice = input("Select option: ")
+        choice = input("Select option:")
 
         if choice == "1":
             create_customer()
