@@ -22,7 +22,7 @@ CREATE TABLE Accounts (
 );
 
 CREATE TABLE Transactions (
-    transaction_id INT PRIMARY KEY,
+    transaction_id INT PRIMARY KEY AUTO_INCREMENT,
     account_id INT,
     amount DECIMAL(10,2),
     transaction_type ENUM (
