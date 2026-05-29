@@ -7,13 +7,17 @@ def deposit():
     conn = get_connection()
     cursor = conn.cursor()
 
-    cursor.callproc('Deposit',
-                   (amount, account_id))
+    try:
+        cursor.callproc('Deposit', (account_id, amount))
+        conn.commit()
+        print("Deposit successful")
 
-    conn.commit()
-    conn.close()
+    except Exception as e:
+        conn.rollback()
+        print("Deposit failed:", e)
 
-    print("Deposit successful")
+    finally:
+        conn.close()
 
 def withdraw():
     account_id = input("Account ID: ")
@@ -22,13 +26,36 @@ def withdraw():
     conn = get_connection()
     cursor = conn.cursor()
 
-    cursor.callproc('Withdraw',
-                   (amount, account_id))
+    try:
+        # Get current balance FIRST
+        cursor.execute(
+            "SELECT balance FROM accounts WHERE account_id = %s",
+            (account_id, amount)
+        )
+        result = cursor.fetchone()
 
-    conn.commit()
-    conn.close()
+        if not result:
+            print("Account not found")
+            return
 
-    print("Withdrawal successful")
+        balance = result[0]
+
+        if amount > balance:
+            print("Insufficient funds")
+            return
+
+        # Call procedure only if valid
+        cursor.callproc('withdraw', (account_id, amount))
+        conn.commit()
+
+        print("Withdrawal successful")
+
+    except Exception as e:
+        conn.rollback()
+        print("Withdrawal failed:", e)
+
+    finally:
+        conn.close()
 
 def view_balance():
     account_id = input("Account ID: ")
@@ -36,10 +63,13 @@ def view_balance():
     conn = get_connection()
     cursor = conn.cursor()
 
-    cursor.execute("SELECT balance FROM accounts WHERE account_id = %s", (account_id,))
+    cursor.execute(
+        "SELECT balance FROM accounts WHERE account_id = %s",
+        (account_id,)
+    )
+
     result = cursor.fetchone()
 
-    conn.commit()
     conn.close()
 
     if result:
