@@ -30,11 +30,17 @@ It is a command-line project that allows users to perform basic banking operatio
 ## 📂 Project Structure
 
 Banking-System/
+
 │
+
 ├── main.py
+
 ├── database/
+
 ├── venv/
+
 ├── requirements.txt
+
 ├── README.md
 
 ## Create Virtual environment
